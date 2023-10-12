@@ -1,122 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find the treasure by SRUJANA AILURI</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find the treasure by SRUJANA AILURI</title>
+  <style>
+    p {
+      font-size: medium;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: darkgrey;
+    }
 
-      p{
-        font-size: medium;
-        font-family: 'Courier New', Courier, monospace;
-        background-color: darkgrey;
-      }
-      #locations
-      {
-        font-size: medium;
-        font-family: 'Times New Roman', Times, serif;
-        background-color: aqua;
-      }
-      #penalty
-      {
-        font-size: medium;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        background-color: coral;
-      }
-      #help
-      {
-        font-size: medium;
-        font-family:monospace;
-        background-color:aqua;
-      }
+    #locations {
+      font-size: medium;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: aqua;
+    }
 
-        
+    #penalty {
+      font-size: medium;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background-color: coral;
+    }
+
+    #help {
+      font-size: medium;
+      font-family: monospace;
+      background-color: aqua;
+    }
+
+
     /*.flex-container {
       display: flex;  flex-direction:row;
       background-color:black;
       color: white;
   }*/
 
-/*.flex-container > div {  /*div children of the flex container
+    /*.flex-container > div {  /*div children of the flex container
   background-color: #f1f1f1; 
   margin: 10px;  padding: 20px;  font-size: 30px;
 }
  
 /* Responsive layout */
-@media (max-width: 600px) { 
-	 .flex-container{
-		 flex-direction:column;
-		 background-color: green;
-	  }
-	}
-    </style>
+    @media (max-width: 600px) {
+      .flex-container {
+        flex-direction: column;
+        background-color: green;
+      }
+    }
+  </style>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
-  integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
-   <h4> Find the treasure by SRUJANA AILURI</h4>
-    
-    <p>Click on the locations to search for treasure,beaware  the traps</p>
-    <br>
-    <p id="locations">Number of locations checked is zero</p>
-    <br>
-    <p id="penalty">Penalty is zero</p>
-    <br>
-    <p>Click for help</p>
-    <br>
-    <p  id="help">Help report</p>
-  
-  
- <div class="Containers">
+  <h4> Find the treasure by SRUJANA AILURI</h4>
+
+  <p>Click on the locations to search for treasure,beaware the traps</p>
+  <br>
+  <p id="locations">Number of locations checked is zero</p>
+  <br>
+  <p id="penalty">Penalty is zero</p>
+  <br>
+  <p><button onclick="help()">Click for help</button></p>
+  <br>
+  <p id="help">Help report</p>
+
+
+  <div class="Containers">
     <div class="row">
-        <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-        <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-        <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-        <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-        <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-        
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="0" onclick="check(0)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="1" onclick="check(1)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="2" onclick="check(2)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="3" onclick="check(3)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="4" onclick="check(4)"></div>
+
     </div>
     <br>
     <div class="row">
-      <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-      <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-      <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-      <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-      <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-      
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="5" onclick="check(5)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="6" onclick="check(6)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="7" onclick="check(7)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="8" onclick="check(8)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="9" onclick="check(9)"></div>
+
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="10" onclick="check(10)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="11" onclick="check(11)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="12" onclick="check(12)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="13" onclick="check(13)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="14" onclick="check(14)"></div>
+
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="15" onclick="check(15)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="16" onclick="check(16)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="17" onclick="check(17)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="18" onclick="check(18)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="19" onclick="check(19)"></div>
+
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="20" onclick="check(20)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="21" onclick="check(21)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="22" onclick="check(22)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="23" onclick="check(23)"></div>
+      <div class="col-md-2"><img src="Map Location.jpg" alt="location" id="24" onclick="check(24)"></div>
+
+    </div>
   </div>
-  <br>
-  <div class="row">
-    <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-    <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-    <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-    <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-    <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-    
-</div>
-<br>
-<div class="row">
-  <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-  <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-  <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-  <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-  <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-  
-</div>
-<br>
-<div class="row">
-  <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-  <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-  <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-  <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-  <div class="col-md-2"><img src="Map Location.jpg" alt="location"></div>
-  
-</div>
-  </div>
+  <script>
+    let ids = new Array();
+    for (i = 0; i < 25; i++) {
+      ids.push(i);
+    }
+    let checkCount = 0;
+    let penalty = 0;
+    let lastCheck = 0;
+    let treasureLocation = 5;
+    let trapLocation = 18;
+    let gameOver = false;
+
+    function check(position) {
+      if (gameOver) {
+        return;
+      }
+      let id = ids[position];
+      let imgElement = document.getElementById(id);
+      if (position === treasureLocation) {
+        imgElement.src = 'Treasure.jpg';
+      } else if (position === trapLocation) {
+        imgElement.src = 'TreasureTrap.jpg';
+      }
+      else {
+        imgElement.src = 'pirate.png';
+      }
+      if (position == treasureLocation) {
+        gameOver = true;
+        penalty -= 3;
+      }
+      else if (position == trapLocation) {
+        gameOver = true;
+        penalty += 4;
+      }
+      checkCount++;
+      penalty++;
+      document.getElementById('locations').textContent = checkCount;
+      document.getElementById('penalty').textContent = penalty;
+      lastCheck = position;
+
+    }
+    function help() {
+      if (gameOver) {
+        return;
+      }
+      let treasureRow = Math.floor(treasureLocation / 5);
+      let treasureCol = treasureLocation % 5;
+      let lastRow = Math.floor(lastCheck / 5);
+      let lastCol = lastCheck % 5;
+
+
+      let rowDiff = Math.abs(treasureRow - lastRow);
+      let colDiff = Math.abs(treasureCol - lastCol);
+
+
+      if ((rowDiff === 1 && colDiff === 0) || (rowDiff === 0 && colDiff === 1)) {
+        document.getElementById('help').textContent = 'can smell it';
+      } else if (rowDiff + colDiff === 2) {
+        document.getElementById('help').textContent = 'Close Matie';
+
+      } else {
+        document.getElementById('help').textContent = 'StepFaster';
+      }
+      penalty += 2;
+      document.getElementById('penalty').textContent = "penalty is " + penalty;
+      document.getElementById('help').textContent = text;
+
+    }
+    // trapLocation =Math.floor(Math.random()*25);
+    // treasureLocation =Math.floor(Math.random()*25);
+    // checkCount=0;
+    // penalty=0;
+    // lastCheck=0;
+    // gameOver=false;
+    document.getElementById("locations").textContent = "Number of locations checked is 0";
+    document.getElementById("penalty").textContent = "penalty is 0";
+    document.getElementById("help").textContent = "click for help";
+  </script>
 </body>
+
 </html>
