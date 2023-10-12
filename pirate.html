@@ -30,18 +30,6 @@
       background-color: aqua;
     }
 
-
-    /*.flex-container {
-      display: flex;  flex-direction:row;
-      background-color:black;
-      color: white;
-  }*/
-
-    /*.flex-container > div {  /*div children of the flex container
-  background-color: #f1f1f1; 
-  margin: 10px;  padding: 20px;  font-size: 30px;
-}
- 
 /* Responsive layout */
     @media (max-width: 600px) {
       .flex-container {
@@ -72,6 +60,7 @@
   <br>
   <p><button onclick="help()">Click for help</button></p>
   <br>
+  <p><button onclick="resetGame()">NewGame</button></p>
   <p id="help">Help report</p>
 
 
@@ -189,15 +178,28 @@
       document.getElementById('help').textContent = text;
 
     }
-    // trapLocation =Math.floor(Math.random()*25);
-    // treasureLocation =Math.floor(Math.random()*25);
-    // checkCount=0;
-    // penalty=0;
-    // lastCheck=0;
-    // gameOver=false;
+
     document.getElementById("locations").textContent = "Number of locations checked is 0";
     document.getElementById("penalty").textContent = "penalty is 0";
     document.getElementById("help").textContent = "click for help";
+
+    /*-- BONUS---*/
+
+   /* function resetGame() {
+      treasureLocation = Math.floor(Math.random() * 25)
+      while (treasureLocation == 12) {
+        treasureLocation = Math.floor(Math.random() * 25)
+      }
+      chestCount = 0
+      penalty = 0
+      document.getElementById("locations").innerHTML = "Number of locations checked is Zero " + chestCount;
+      document.getElementById("penalty").innerHTML = "chestCount " + penalty;
+      for (let i = 0; i < 25; i++) {
+        if (i != 12) {
+          document.getElementById(ids[i]).src = "treasurelocation.jpg"
+        }
+      }
+    }*/
   </script>
 </body>
 
